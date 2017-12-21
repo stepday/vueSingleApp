@@ -1,8 +1,9 @@
 html,body{ margin: 0;padding: 0;}
-i{ font-style: normal;}
+em,i{ font-style: normal;}
 a{ text-decoration: none; color: #2196f3;}
 ul li{ list-style: none;}
 .view{ margin-bottom: 50px;}
+.hide{ display: none;}
 .btn{ cursor: pointer;  min-width: 100px; height: 30px; line-height: 30px; padding: 0 15px; text-align: center; font-size: 14px; outline: none;border:none; border-radius: 5px; background: #008CBA; color: #fff;  }
 .btn i{ position: relative; transition:0.5s; cursor: pointer; display: inline-block;}
 .btn i:after{ content: '»';position: absolute;opacity:0;top: 0;right: -20px;transition:0.5s;}

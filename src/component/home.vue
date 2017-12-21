@@ -1,6 +1,6 @@
 <template>
 	<div class="home-box">
-		<h5>用户中心</h5>
+		<h5>前十大最好看的电影</h5>
 		<ul>
 			<li v-for="article in articles">
 				<img :src="article.images.small">{{article.title}}<span>[{{article.year}}年]</span>

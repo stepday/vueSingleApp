@@ -71,7 +71,8 @@ module.exports = {
   },
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      'Common':'vue/static/stepday.tools.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },

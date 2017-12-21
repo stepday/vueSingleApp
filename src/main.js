@@ -12,10 +12,14 @@ Vue.config.debug = true;
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
+import storeConfig from './vuex/store'
+
 //定义路由组件
 import logincomponent from './component/login.vue'
 import registercomponent from './component/register.vue'
 import homecomponent from './component/home.vue'
+import blogcomponent from './component/blog.vue'
+import darencomponent from './component/daren.vue'
 
 //创建一个路由实例
 //并且配置路由规则
@@ -42,6 +46,16 @@ const router = new VueRouter({
 			path:"/home",
 			name:"用户中心",
 			component:homecomponent
+		},
+		{
+			path:"/blog",
+			name:"那些坑人的事儿",
+			component:blogcomponent
+		},
+		{
+			path:"/daren",
+			name:"踩坑达人",
+			component:darencomponent
 		}
 	]
 });
@@ -50,5 +64,6 @@ const router = new VueRouter({
 //路由会创建一个APP实例，并且挂载到选择符 #app 匹配的元素上
 const app = new Vue({
   router:router,
+  store:storeConfig,
   render: h => h(App)
 }).$mount('#app');

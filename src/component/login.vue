@@ -23,7 +23,7 @@
 			}
 		},
 		methods:{
-			login:function(){
+			login:function(){				
 				if(this.uname.length == 0)
 				{
 					alert("请输入用户名");
@@ -34,6 +34,9 @@
 					alert("请输入密码");
 					return;
 				}
+				this.$store.commit('setName',true);
+				//设置cookies 标记登录成功
+				//Common.Tools.Cookies.set("name",escape(this.uname));
 				//进入主页面
 				this.$router.push({path:"/home"});
 			}
