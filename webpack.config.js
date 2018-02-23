@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
 
+var ExtractTextPlugin = require('extract-text-webpack-plugin');//css样式从js文件中分离出来,需要通过命令行安装 extract-text-webpack-plugin依赖包
+
 module.exports = {
   entry: './src/main.js',
   output: {
@@ -9,6 +11,23 @@ module.exports = {
     filename: 'build.js'
   },
   module: {
+    loaders:[
+        //解析.css文件
+        {
+            test: /\.css$/,
+            loader: ExtractTextPlugin.extract("style", 'css')
+        },
+        //解析.vue文件
+        {
+            test: /\.vue$/,
+            loader: 'vue'
+        }, 
+        //解析.scss文件,对于用 import 或 require 引入的sass文件进行加载，以及<style lang="sass">...</style>声明的内部样式进行加载
+        {
+            test: /\.scss$/,
+            loader: ExtractTextPlugin.extract("style", 'css!sass') //这里用了样式分离出来的插件，如果不想分离出来，可以直接这样写 loader:'style!css!sass'
+        }
+    ],
     rules: [
       {
         test: /\.css$/,
@@ -72,7 +91,7 @@ module.exports = {
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      'Common':'vue/static/stepday.tools.js'
+      'Common':'vue/static/renrun.tools.js'
     },
     extensions: ['*', '.js', '.vue', '.json']
   },

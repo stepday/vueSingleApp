@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <headercomponent></headercomponent>
+    <!-- <headercomponent></headercomponent> -->
     <router-view class="view"></router-view>
-    <footercomponent></footercomponent>   
+    <!-- <footercomponent></footercomponent>   --> 
   </div>
 </template>
 
 <script>
 //引入头部组件
-import headercomponent from './component/header.vue';
+//import headercomponent from './component/public/header.vue';
 //引入尾部组件
-import footercomponent from './component/footer.vue';
+//import footercomponent from './component/public/footer.vue';
 
 export default {
   name: 'app',
@@ -21,8 +21,8 @@ export default {
   },
   //注册组件
   components:{ 
-    headercomponent,
-    footercomponent
+    // headercomponent,
+    // footercomponent
   }
 }
 </script>

@@ -217,5 +217,9 @@ Common.Tools = {
                 return false;
             }
         }
+    },
+    //日志类
+    Console:{
+
     }
 };
